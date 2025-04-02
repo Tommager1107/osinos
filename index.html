@@ -1,61 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osinos</title>
+    <title>OSINOS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-color: black;
-            color: white;
+            background-color: #121212;
+            color: #e0e0e0;
             font-family: 'Courier New', Courier, monospace;
+        }
+
+        .glitch {
+            position: relative;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             overflow: hidden;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ff0000;
+            z-index: -1;
+            animation: glitch-anim 1.5s infinite;
+        }
+
+        .glitch::after {
+            left: 2px;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(5px);
+            }
         }
 
         .fade-in {
             opacity: 0;
-            animation: fadeIn 0.5s ease-in forwards;
+            animation: fadeIn 1s ease-in-out forwards;
         }
 
         @keyframes fadeIn {
-            from {
+            0% {
                 opacity: 0;
             }
 
-            to {
+            100% {
                 opacity: 1;
             }
         }
 
-        .section {
-            border-top: 2px solid #007bff;
-            padding: 20px;
+        .scrolling {
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .scrolling span {
+            display: inline-block;
+            animation: scrolling-text 10s linear infinite;
+        }
+
+        @keyframes scrolling-text {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
-<body class="p-6">
+
+<body class="p-8">
+
+    <!-- Header Section -->
+    <header class="mb-16">
+        <div class="glitch" data-text="OSINOS">OSINOS</div>
+        <h1 class="text-center text-4xl font-bold mt-2 text-gray-500">Lightweight Linux UI for Windows</h1>
+    </header>
+
+    <!-- Main Content -->
     <div class="container mx-auto">
-        <h1 class="text-4xl font-bold fade-in">Osinos - Lightweight Linux UI for Windows</h1>
 
-        <div class="section fade-in">
-            <h2 class="text-2xl">About the Project</h2>
-            <p>Osinos is a lightweight, application-layer Linux environment running on Windows, inspired by eDEX UI.</p>
-        </div>
+        <!-- About Section -->
+        <section class="section mb-12 fade-in">
+            <h2 class="text-3xl font-semibold mb-4">About the Project</h2>
+            <p class="text-lg">OSINOS is a lightweight, application-layer Linux environment running on Windows, inspired by
+                the futuristic Edex UI, designed to provide a clean and powerful interface for your everyday needs.</p>
+        </section>
 
-        <div class="section fade-in">
-            <h2 class="text-2xl">Features</h2>
-            <ul class="list-disc pl-5">
-                <li>Custom desktop environment with terminal-style UI</li>
-                <li>Live system stats (CPU, RAM, Network usage)</li>
-                <li>Futuristic design with animations</li>
+        <!-- Features Section -->
+        <section class="section mb-12 fade-in">
+            <h2 class="text-3xl font-semibold mb-4">Features</h2>
+            <ul class="list-disc pl-6 space-y-3 text-lg">
+                <li>Terminal-like UI with a modern, minimalistic design.</li>
+                <li>Real-time system stats such as CPU, RAM, and network usage.</li>
+                <li>Interactive, smooth animations that make your workflow intuitive.</li>
+                <li>Fully customizable desktop environment with a futuristic look and feel.</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section fade-in">
-            <h2 class="text-2xl">Installation</h2>
-            <p>The project is currently under development and is not publicly available yet.</p>
-        </div>
+        <!-- Installation Section -->
+        <section class="section mb-12 fade-in">
+            <h2 class="text-3xl font-semibold mb-4">Installation</h2>
+            <p class="text-lg">Currently under development. The project is not yet publicly available, but will be
+                released soon!</p>
+        </section>
+
+        <!-- Scrolling Banner -->
+        <section class="mb-12 fade-in">
+            <h2 class="text-2xl font-semibold mb-4">Stay Tuned for Updates</h2>
+            <div class="scrolling text-white">
+                <span>OSINOS is coming soon... Stay tuned for updates, and be ready for the next level of computing!</span>
+            </div>
+        </section>
+
     </div>
+
+    <!-- Footer Section -->
+    <footer class="mt-16 text-center text-gray-500">
+        <p>&copy; 2025 OSINOS. All Rights Reserved.</p>
+    </footer>
 </body>
+
 </html>
