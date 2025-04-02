@@ -13,54 +13,6 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        .glitch {
-            position: relative;
-            color: #fff;
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            overflow: hidden;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: #ff0000;
-            z-index: -1;
-            animation: glitch-anim 1.5s infinite;
-        }
-
-        .glitch::after {
-            left: 2px;
-            animation-delay: 0.3s;
-        }
-
-        @keyframes glitch-anim {
-            0% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-5px);
-            }
-
-            50% {
-                transform: translateX(5px);
-            }
-
-            75% {
-                transform: translateX(-5px);
-            }
-
-            100% {
-                transform: translateX(5px);
-            }
-        }
-
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
@@ -75,28 +27,6 @@
                 opacity: 1;
             }
         }
-
-        .scrolling {
-            position: relative;
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .scrolling span {
-            display: inline-block;
-            animation: scrolling-text 10s linear infinite;
-        }
-
-        @keyframes scrolling-text {
-            0% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
     </style>
 </head>
 
@@ -104,8 +34,8 @@
 
     <!-- Header Section -->
     <header class="mb-16">
-        <div class="glitch" data-text="OSINOS">OSINOS</div>
-        <h1 class="text-center text-4xl font-bold mt-2 text-gray-500">Lightweight Linux UI for Windows</h1>
+        <h1 class="text-center text-5xl font-bold mt-2 text-gray-500">OSINOS</h1>
+        <h2 class="text-center text-4xl font-bold mt-2 text-gray-400">Lightweight Linux UI for Windows</h2>
     </header>
 
     <!-- Main Content -->
@@ -134,14 +64,6 @@
             <h2 class="text-3xl font-semibold mb-4">Installation</h2>
             <p class="text-lg">Currently under development. The project is not yet publicly available, but will be
                 released soon!</p>
-        </section>
-
-        <!-- Scrolling Banner -->
-        <section class="mb-12 fade-in">
-            <h2 class="text-2xl font-semibold mb-4">Stay Tuned for Updates</h2>
-            <div class="scrolling text-white">
-                <span>OSINOS is coming soon... Stay tuned for updates, and be ready for the next level of computing!</span>
-            </div>
         </section>
 
     </div>
